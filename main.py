@@ -52,6 +52,12 @@ def main():
         #update player
         updateable.update(dt)
 
+        #detect collisions
+        for asteroid in space_rocks:
+            if player_ship.collides_with(asteroid):
+                print("Game over!")
+                exit()
+
         #refresh screen
         pygame.display.flip()
 
